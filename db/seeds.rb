@@ -26,7 +26,7 @@ require 'faker'
 end
 
 user = User.first
-user.skip_confirmation!
+user.skip_reconfirmation!
 user.update_attributes(email: 'eric87chen@gmail.com', password: 'jesus', password_confirmation: 'jesus')
 
 puts "Seed finished"
