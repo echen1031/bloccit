@@ -29,3 +29,5 @@ gem 'devise'
 gem 'faker'
 gem 'figaro'
 gem 'pundit'
+gem 'simple_form'
+
