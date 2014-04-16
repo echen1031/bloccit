@@ -1,14 +1,14 @@
 require 'faker'
 
 topics = []
-15.times do
+20.times do
   topics << Topic.create(
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph
   )
 end
 
-5.times do
+20.times do
   password = Faker::Lorem.characters(10)
   user = User.new(
     name: Faker::Name.name,
@@ -23,7 +23,7 @@ end
   #     # The `skip_confirmation!` method sets the confirmation date
   #       # to avoid sending an email. The `save` method updates the database.
 
-  5.times do
+  20.times do
     topic = topics.first
     post = Post.create(
       user: user,
