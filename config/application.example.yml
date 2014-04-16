@@ -1,5 +1,11 @@
 SENDGRID_PASSWORD: 'viqsb1wm'
 SENDGRID_USERNAME: 'app23956016@heroku.com'
 DEVISE_SECRET_KEY: 'ffc53a7fd118e8bac1201fd6c5b3120fc0bf2c8185f1f631be3cc16db09e06b93e66608e322a8505f20d31773a23472db29180952c5b63aacbc7c32a081cee82'
+AWS_ACCESS_KEY_ID: 'AKIAIXNANHTMNJZAQ73Q'
+AWS_SECRET_ACCESS_KEY: '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'
+development:
+  AWS_BUCKET: 'ericchen-bloccit-development'
+production:
+  AWS_BUCKET: 'ericchen-bloccit-production'
 
 
