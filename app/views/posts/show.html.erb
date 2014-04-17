@@ -8,10 +8,7 @@
       <%= @post.user.name %>
     </small>
   <p><%= markdown @post.body %></p>
-  </div>
-  <div class="col-md-4">
-    <% if policy(@post).edit? %>
-      <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
-    <% end %>
+  <p><%= render partial: "comments/comment", collection: @comments %></p>
+  <p><%= render partial: "comments/form"%></p>
   </div>
 </div>

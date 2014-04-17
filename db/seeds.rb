@@ -8,7 +8,7 @@ topics = []
   )
 end
 
-20.times do
+5.times do
   password = Faker::Lorem.characters(10)
   user = User.new(
     name: Faker::Name.name,
@@ -34,6 +34,16 @@ end
       post.update_attribute(:created_at, Time.now - rand(600..31536000))
 
       topics.rotate!
+  end
+end
+
+User.all.each do |user|
+  4.times do
+    post = Post.all.shuffle.first
+    comment = user.comments.create(
+      body: Faker::Lorem.paragraph,
+      post: post)
+    comment.update_attribute(:created_at, Time.now - (rand(1000).minutes))
   end
 end
 
