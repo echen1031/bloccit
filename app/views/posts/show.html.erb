@@ -11,4 +11,13 @@
   <p><%= render partial: "comments/comment", collection: @comments %></p>
   <p><%= render partial: "comments/form"%></p>
   </div>
+  <div class="col-md-4">
+  <% if policy(@post).edit? %>
+      <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-success' %>
+    <% end %>
+
+    <% if policy(@post).destroy? %>
+      <%= link_to "Delete Post", [@topic,@post], method: :delete, class: 'btn btn-danger', confirm: 'Are you sure you want to delete this post?' %>
+    <% end %>
+  </div>
 </div>
