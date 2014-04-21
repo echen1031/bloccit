@@ -5,11 +5,16 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   has_many :posts
   has_many :comments
+  has_many :favorites, dependent: :destroy
   has_many :votes, dependent: :destroy
 
   mount_uploader :avatar, AvatarUploader
 
   def role?(base_role)
     role == base_role.to_s
+  end
+
+  def favorited(post)
+    self.favorites.where(post_id: post.id).first
   end
 end
