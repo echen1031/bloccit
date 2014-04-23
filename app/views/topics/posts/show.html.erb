@@ -9,6 +9,9 @@
       <%= @post.user.name %>
     </small>
   <p><%= markdown @post.body %></p>
+
+  <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
+
   <p><%= render partial: "comments/comment", collection: @comments %></p>
   <p><%= render partial: "comments/form" %></p>
   </div>
